@@ -24,10 +24,12 @@ public class EmailAccountTest {
     public void testPasswordCharacters() {
         Assert.assertTrue(AVAILABLE_CHARACTERS.containsAll(password.chars().mapToObj(String::valueOf).collect(toSet())));
     }
+
     @Test
     public void testPasswordLength() {
         Assert.assertEquals(10, password.length());
     }
+
     @Test
     public void testEmailGeneration() {
         Assert.assertTrue(account.getCompanyEmail().matches("testfirstname\\.testlastname@acct\\.anycompany\\.com"));
